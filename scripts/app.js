@@ -2,7 +2,8 @@ var teamR = 20,
     _scheduleData,
     _stadiumsObject = {},
     weekSchedule,
-    week = 0;
+    week = 0,
+    highlightTeam;
 
 var margin = {top: 80, right: 180, bottom: 80, left: 180},
     width = 1400 - margin.left - margin.right,
@@ -32,6 +33,7 @@ var svg = d3.select(".svg").append("svg")
     .attr("height", height)
     .on("mousedown", function(d) {
         d3.selectAll(".team").classed("diminish", false);
+        highlightTeam = null;
     })
 
 var teams = svg.selectAll(".team");
@@ -106,8 +108,12 @@ function update(week) {
         })
         .classed("team", true)
         .on("mousedown", function(d) {
+            highlightTeam = d;
             teams.classed("diminish", function(d1) {
-                return d !== d1;
+                if(d1 == d || d1.team == d.opponent){
+                    return false;   
+                }
+                return true;
             });
             d3.event.stopPropagation();
         })
@@ -120,10 +126,22 @@ function update(week) {
         .attr("height", 35)
 
         
+    teams.each(function(d) {
+        if(!highlightTeam) return;
+        if(d.team === highlightTeam.team){
+            highlightTeam = d;
+        }
+    });
     
     teams.classed("bye", function(d) {
         return d.opponent === "BYE";
-    });
+    }).classed("diminish", function(d) {
+        if(!highlightTeam) return false;
+        if(d == highlightTeam || d.team == highlightTeam.opponent){
+            return false;
+        }
+        return true;
+    })
     
     teams.exit().remove();
     force.start();
