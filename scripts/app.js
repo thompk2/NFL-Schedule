@@ -117,13 +117,13 @@ function update(week) {
         })
         .attr("transform", function (d) { return "translate(" + d.x + "," + d.y + ")"; });
 
-
     teamEnter.append("svg:image")
         .attr("xlink:href", function(d) { return 'styles/img/' + d.team + '.png'})
         .attr("width", 45)
         .attr("height", 35)
 
-        
+
+    
     teams.each(function(d) {
         if(!highlightTeam) return;
         if(d.team === highlightTeam.team){
@@ -139,6 +139,13 @@ function update(week) {
             return false;
         }
         return true;
+    })
+    .classed("highlight", function(d) {
+        if(!highlightTeam) return false;
+        if(d == highlightTeam || d.team == highlightTeam.opponent){
+            return true;
+        }
+        return false;
     })
     
     teams.exit().remove();
@@ -179,7 +186,7 @@ function tick(e) {
         d.x += (_stadiumsObject[d.stadium].x - d.x) * k;
         d.y += (_stadiumsObject[d.stadium].y - d.y) * k;
     });
-
+    
     teams.attr("transform", function (d) { return "translate(" + d.x + "," + d.y + ")"; });
 };
 
