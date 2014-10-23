@@ -1,0 +1,70 @@
+.states {
+  fill: rgb(181, 181, 181);
+}
+
+.state-borders {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.game-line {
+    stroke: red;
+    stroke-width: 1px;
+}
+
+.team {
+    stroke-width: 2px;
+}
+
+.bye {
+    fill-opacity: .2;
+    stroke-opacity: .2;
+    opacity: .2;
+}
+
+.highlight{
+    fill-opacity: 1;
+}
+
+.diminish{
+    fill-opacity: .2;
+    stroke-opacity: .2;
+    opacity: .2;
+}
+
+.ATL{ fill: #B4251F; stroke: #242520; }
+.ARI{ fill: #8D3E44; stroke: #FFFFFF; }
+.BAL{ fill: #483E7B; stroke: #242520; }
+.BUF{ fill: #000000; stroke: #C13840; }
+.CAR{ fill: #3987B8; stroke: #242520; }
+.CHI{ fill: #000000; stroke: #D25C2C; }
+.CIN{ fill: #D25C2C; stroke: #242520; }
+.CLE{ fill: #D25C2C; stroke: #28231F; }
+.DAL{ fill: #3B4455; stroke: #BFC5C5; }
+.DEN{ fill: #3B4455; stroke: #D25C2C; }
+.DET{ fill: #1E3C7A; stroke: #BFC5C5; }
+.GB{ fill: #36483a; stroke: #EEC131; }
+.HOU{ fill: #000000; stroke: #B4251F; }
+.IND{ fill: #071753; stroke: #FFFFFF; }
+.JAX{ fill: #33687A; stroke: #242520; }
+.KC{ fill: #B4251F; stroke: #EEC131; }
+.MIA{ fill: #235161; stroke: #D25C2C; }
+.MIN{ fill: #483E7B; stroke: #EEC131; }
+.NE{ fill: #3B4455; stroke: #C13840; }
+.NO{ fill: #A78524; stroke: #242520; }
+.NYG{ fill: #000000; stroke: #B4251F; }
+.NYJ{ fill: #36483a; stroke: #FFFFFF; }
+.OAK{ fill: #BFC5C5; stroke: #242520; }
+.PHI{ fill: #132C33; stroke: #242520; }
+.PIT{ fill: #242520; stroke: #EEC131; }
+.SD{ fill: #3B4455; stroke: #EEC131; }
+.SF{ fill: #8D3E44; stroke: #A78524; }
+.SEA{ fill: #46566D; stroke: #65A161; }
+.STL{ fill: #151A2E; stroke: #A78524; }
+.TB{ fill: #C11C16; stroke: #AA9884; }
+.TEN{ fill: #3B89BA; stroke: #3B4455; }
+.WSH{ fill: #543437; stroke: #EEC131; }
+
