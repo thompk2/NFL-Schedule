@@ -106,7 +106,10 @@ function update(week) {
         })
         .classed("team", true)
         .on("mousedown", function(d) {
-            teams.classed("diminish", true);
+            teams.classed("diminish", function(d1) {
+                return d !== d1;
+            });
+            d3.event.stopPropagation();
         })
         .attr("transform", function (d) { return "translate(" + d.x + "," + d.y + ")"; });
 
