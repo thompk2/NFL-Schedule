@@ -25,14 +25,14 @@
     opacity: .2;
 }
 
-.highlight{
-    fill-opacity: 1;
-}
-
 .diminish{
     fill-opacity: .2;
     stroke-opacity: .2;
     opacity: .2;
+}
+
+.highlight{
+    opacity: 1;
 }
 
 .ATL{ fill: #B4251F; stroke: #242520; }

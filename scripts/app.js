@@ -32,7 +32,9 @@ var svg = d3.select(".svg").append("svg")
     .attr("width", width)
     .attr("height", height)
     .on("mousedown", function(d) {
-        d3.selectAll(".team").classed("diminish", false);
+        d3.selectAll(".team")
+            .classed("diminish", false)
+            .classed("highlight", false);
         highlightTeam = null;
     })
 
@@ -109,12 +111,8 @@ function update(week) {
         .classed("team", true)
         .on("mousedown", function(d) {
             highlightTeam = d;
-            teams.classed("diminish", function(d1) {
-                if(d1 == d || d1.team == d.opponent){
-                    return false;   
-                }
-                return true;
-            });
+            teams.classed("diminish", function(d1){ return d1 != d && d1.team != d.opponent; })
+                .classed("highlight", function(d1){ return d1 == d || d1.team == d.opponent; })
             d3.event.stopPropagation();
         })
         .attr("transform", function (d) { return "translate(" + d.x + "," + d.y + ")"; });
