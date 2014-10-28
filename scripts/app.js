@@ -121,13 +121,21 @@ function update(week) {
         .attr("xlink:href", function(d) { return 'styles/img/' + d.team + '.png'})
         .attr("width", 45)
         .attr("height", 35)
-
+    
+    teamEnter.append("text")
+        .attr("class", "bye-text")
+        .attr("dx", "1.5em");
 
     
     teams.each(function(d) {
         if(!highlightTeam) return;
         if(d.team === highlightTeam.team){
             highlightTeam = d;
+        }
+        if(d.opponent === "BYE"){
+            d3.select(this).selectAll(".bye-text").text("Bye Week")   
+        } else {
+            d3.select(this).selectAll(".bye-text").text("")   
         }
     });
     

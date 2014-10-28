@@ -17,12 +17,13 @@
 
 .team {
     stroke-width: 2px;
+    text-anchor: middle;
 }
 
 .bye {
     fill-opacity: .2;
     stroke-opacity: .2;
-    opacity: .2;
+    opacity: .7;
 }
 
 .diminish{
@@ -33,6 +34,13 @@
 
 .highlight{
     opacity: 1;
+}
+
+.bye.highlight text{
+    stroke: #fff;
+    stroke-width: 1.5px;
+    fill-opacity: 1;
+    font-weight: 900;
 }
 
 .ATL{ fill: #B4251F; stroke: #242520; }
